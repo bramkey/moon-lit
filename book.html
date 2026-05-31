@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>moon-lit | book detail</title>
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+  <div class="site-shell">
+  <header>
+    <h1>book detail</h1>
+
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="library.html">my library</a></li>
+        <li><a href="shared.html">our library</a></li>
+        <li><a href="friends.html">friends</a></li>
+        <li><a href="account.html">account</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h2>example book title</h2>
+      <p>author name</p>
+      <p>total pages: 420</p>
+      <p>tags: horror, long, shared</p>
+
+      <section aria-labelledby="summary-heading">
+          <h3 id="summary-heading">summary</h3>
+          <p>a reader-written summary of the book.</p>
+      </section>
+
+      <section aria-labelledby="update-progress-heading">
+          <h3 id="update-progress-heading">update progress</h3>
+        <form>
+          <p>
+              <label for="current-page">current page</label>
+            <input id="current-page" name="current-page" type="number" min="0">
+          </p>
+
+          <button type="submit">save progress</button>
+        </form>
+      </section>
+
+      <section aria-labelledby="review-heading">
+          <h3 id="review-heading">review</h3>
+        <form>
+          <p>
+              <label for="book-rating">rating</label>
+            <select id="book-rating" name="rating">
+                <option value="">choose a rating</option>
+              <option value="1">1 out of 5</option>
+              <option value="2">2 out of 5</option>
+              <option value="3">3 out of 5</option>
+              <option value="4">4 out of 5</option>
+              <option value="5">5 out of 5</option>
+            </select>
+          </p>
+
+          <p>
+              <label for="book-review">review</label>
+            <textarea id="book-review" name="review" rows="6"></textarea>
+          </p>
+
+          <button type="submit">save review</button>
+        </form>
+      </section>
+
+      <section aria-labelledby="book-quotes-heading">
+          <h3 id="book-quotes-heading">quotes from this book</h3>
+        <p><a href="shared.html">view shared quote area</a></p>
+      </section>
+    </article>
+  </main>
+  </div>
+</body>
+</html>

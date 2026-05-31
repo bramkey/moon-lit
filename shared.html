@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>moon-lit | our library</title>
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+  <div class="site-shell">
+  <header>
+    <h1>our library</h1>
+
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="library.html">my library</a></li>
+        <li><a href="shared.html" aria-current="page">our library</a></li>
+        <li><a href="friends.html">friends</a></li>
+        <li><a href="account.html">account</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h2><a href="book.html">shared book example</a></h2>
+      <p>author name</p>
+
+      <section aria-labelledby="shared-progress-heading">
+        <h3 id="shared-progress-heading">shared progress</h3>
+        <dl class="detail-grid">
+          <div>
+            <dt>your page</dt>
+            <dd>184</dd>
+          </div>
+          <div>
+            <dt>their page</dt>
+            <dd>126</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section aria-labelledby="shared-ratings-heading">
+        <h3 id="shared-ratings-heading">ratings</h3>
+        <dl class="detail-grid">
+          <div>
+            <dt>your rating</dt>
+            <dd>4 out of 5</dd>
+          </div>
+          <div>
+            <dt>their rating</dt>
+            <dd>not rated yet</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section aria-labelledby="shared-notes-heading">
+        <h3 id="shared-notes-heading">shared notes</h3>
+        <ul>
+          <li>a note visible to both readers.</li>
+          <li>a private note visible only to its author.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="quote-access-heading">
+        <h3 id="quote-access-heading">quote access</h3>
+        <p>3 quotes are visible to both readers.</p>
+        <p>2 quotes are still locked by page progress.</p>
+      </section>
+    </article>
+
+    <section aria-labelledby="add-quote-heading">
+      <h2 id="add-quote-heading">add a shared quote</h2>
+      <form>
+        <p>
+          <label for="quote-book">book</label>
+          <input id="quote-book" name="book" type="text">
+        </p>
+
+        <p>
+          <label for="quote-page">page number</label>
+          <input id="quote-page" name="page" type="number" min="1">
+        </p>
+
+        <p>
+          <label for="quote-text">quote</label>
+          <textarea id="quote-text" name="quote" rows="4"></textarea>
+        </p>
+
+        <button type="submit">save quote</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="visible-quotes-heading">
+      <h2 id="visible-quotes-heading">visible shared quotes</h2>
+      <blockquote>
+        <p>a quote both readers are far enough along to see.</p>
+        <footer>example shared book, page 82</footer>
+      </blockquote>
+    </section>
+
+    <section aria-labelledby="locked-quotes-heading">
+      <h2 id="locked-quotes-heading">locked shared quotes</h2>
+      <ul>
+        <li>
+          quote from example shared book, page 210.
+          unlocks when your logged progress reaches page 210.
+        </li>
+      </ul>
+    </section>
+  </main>
+  </div>
+</body>
+</html>

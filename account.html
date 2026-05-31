@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>moon-lit | account</title>
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+  <div class="site-shell">
+  <header>
+    <h1>account</h1>
+
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="library.html">my library</a></li>
+        <li><a href="shared.html">our library</a></li>
+        <li><a href="friends.html">friends</a></li>
+        <li><a href="account.html" aria-current="page">account</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="login-heading">
+      <h2 id="login-heading">log in</h2>
+      <form>
+        <p>
+            <label for="login-email">email</label>
+          <input id="login-email" name="email" type="email" autocomplete="email">
+        </p>
+
+        <p>
+            <label for="login-password">password</label>
+          <input id="login-password" name="password" type="password" autocomplete="current-password">
+        </p>
+
+        <button type="submit">log in</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="profile-heading">
+      <h2 id="profile-heading">reader profile</h2>
+      <dl>
+        <dt>name</dt>
+        <dd>reader name</dd>
+
+        <dt>current goal</dt>
+        <dd>books or pages to read this year</dd>
+
+        <dt>favorite genres</dt>
+        <dd>horror, fantasy, romance, literary fiction</dd>
+      </dl>
+    </section>
+  </main>
+  </div>
+</body>
+</html>

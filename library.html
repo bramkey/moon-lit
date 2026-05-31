@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>moon-lit | my library</title>
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+  <div class="site-shell">
+  <header>
+    <h1>my library</h1>
+
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="library.html" aria-current="page">my library</a></li>
+        <li><a href="shared.html">our library</a></li>
+        <li><a href="friends.html">friends</a></li>
+        <li><a href="account.html">account</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="library-actions" aria-labelledby="library-actions-heading">
+      <h2 id="library-actions-heading">actions</h2>
+      <div class="action-buttons">
+        <button type="button" popovertarget="add-book-popover">add a book</button>
+        <button type="button" popovertarget="add-quote-popover">add quote</button>
+      </div>
+    </section>
+
+    <section id="add-book-popover" class="compact-form modal-panel" popover aria-labelledby="add-book-heading">
+      <h2 id="add-book-heading">add a book</h2>
+      <button class="modal-close" type="button" popovertarget="add-book-popover" popovertargetaction="hide">close</button>
+      <form>
+        <div class="form-fields">
+          <p>
+            <label for="book-title">title</label>
+            <input id="book-title" name="title" type="text">
+          </p>
+
+          <p>
+            <label for="book-author">author</label>
+            <input id="book-author" name="author" type="text">
+          </p>
+
+          <p>
+            <label for="book-pages">total pages</label>
+            <input id="book-pages" name="pages" type="number" min="1">
+          </p>
+
+          <p>
+            <label for="book-current-page">current page</label>
+            <input id="book-current-page" name="current-page" type="number" min="0">
+          </p>
+
+          <p>
+            <label for="book-status">shelf</label>
+            <select id="book-status" name="status">
+              <option value="want-to-read">want to read</option>
+              <option value="bookmarked">actively reading</option>
+              <option value="finished">finished</option>
+              <option value="paused">paused</option>
+            </select>
+          </p>
+        </div>
+
+        <fieldset>
+          <legend>tags</legend>
+          <label><input type="checkbox" name="tags" value="horror"> horror</label>
+          <label><input type="checkbox" name="tags" value="fantasy"> fantasy</label>
+          <label><input type="checkbox" name="tags" value="sci-fi"> sci-fi</label>
+          <label><input type="checkbox" name="tags" value="romance"> romance</label>
+          <label><input type="checkbox" name="tags" value="mystery"> mystery</label>
+          <label><input type="checkbox" name="tags" value="thriller"> thriller</label>
+          <label><input type="checkbox" name="tags" value="literary"> literary</label>
+          <label><input type="checkbox" name="tags" value="nonfiction"> nonfiction</label>
+          <label><input type="checkbox" name="tags" value="memoir"> memoir</label>
+          <label><input type="checkbox" name="tags" value="poetry"> poetry</label>
+          <label><input type="checkbox" name="tags" value="graphic-novel"> graphic novel</label>
+          <label><input type="checkbox" name="tags" value="classic"> classic</label>
+          <label><input type="checkbox" name="tags" value="cozy"> cozy</label>
+          <label><input type="checkbox" name="tags" value="dark"> dark</label>
+          <label><input type="checkbox" name="tags" value="nsfw"> nsfw</label>
+          <label><input type="checkbox" name="tags" value="long"> long</label>
+          <label><input type="checkbox" name="tags" value="short"> short</label>
+        </fieldset>
+
+        <button type="submit">add book</button>
+      </form>
+    </section>
+
+    <section id="add-quote-popover" class="compact-form modal-panel" popover aria-labelledby="add-quote-heading">
+      <h2 id="add-quote-heading">add quote</h2>
+      <button class="modal-close" type="button" popovertarget="add-quote-popover" popovertargetaction="hide">close</button>
+      <form>
+        <div class="form-fields">
+          <p>
+            <label for="quote-book">book</label>
+            <select id="quote-book" name="book">
+              <option value="">choose a book</option>
+              <option value="example-book-title">example book title</option>
+              <option value="example-shared-book">example shared book</option>
+              <option value="example-active-book">example active book</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="quote-page">page</label>
+            <input id="quote-page" name="page" type="number" min="1">
+          </p>
+        </div>
+
+        <p>
+          <label for="quote-text">quote</label>
+          <textarea id="quote-text" name="quote" rows="5"></textarea>
+        </p>
+
+        <button type="submit">save quote</button>
+      </form>
+    </section>
+
+    <section class="book-shelf featured-shelf" aria-labelledby="bookmarked-heading">
+      <h2 id="bookmarked-heading">bookmarked</h2>
+      <p>currently reading.</p>
+      <ul>
+        <li>
+          <article class="book-tile">
+            <h3><a href="book.html">example active book</a></h3>
+            <p>184 / 420 pages</p>
+            <progress value="184" max="420">184 of 420 pages</progress>
+          </article>
+        </li>
+        <li>
+          <article class="book-tile">
+            <h3><a href="book.html">quiet moon book</a></h3>
+            <p>62 / 280 pages</p>
+            <progress value="62" max="280">62 of 280 pages</progress>
+          </article>
+        </li>
+        <li>
+          <article class="book-tile">
+            <h3><a href="book.html">winter horror story</a></h3>
+            <p>211 / 390 pages</p>
+            <progress value="211" max="390">211 of 390 pages</progress>
+          </article>
+        </li>
+      </ul>
+      <p class="panel-link"><a href="bookmarked.html">view more</a></p>
+    </section>
+
+    <div class="shelf-pair">
+    <section class="book-shelf" aria-labelledby="bookshelf-heading">
+      <h2 id="bookshelf-heading">bookshelf</h2>
+      <p>to be read.</p>
+      <ul>
+        <li>
+          <article class="book-tile">
+            <h3><a href="book.html">example future book</a></h3>
+            <p>horror, long</p>
+          </article>
+        </li>
+        <li>
+          <article class="book-tile">
+            <h3><a href="book.html">paperback constellation</a></h3>
+            <p>romance, cozy</p>
+          </article>
+        </li>
+        <li>
+          <article class="book-tile">
+            <h3><a href="book.html">the old house</a></h3>
+            <p>mystery, dark</p>
+          </article>
+        </li>
+        <li>
+          <article class="book-tile">
+            <h3><a href="book.html">small poems at midnight</a></h3>
+            <p>poetry, short</p>
+          </article>
+        </li>
+      </ul>
+      <p class="panel-link"><a href="bookshelf.html">view more</a></p>
+    </section>
+
+    <section class="book-shelf" aria-labelledby="finished-heading">
+      <h2 id="finished-heading">finished books</h2>
+      <ul>
+        <li>
+          <article class="book-tile">
+            <h3><a href="book.html">example finished book</a></h3>
+            <p class="star-rating" aria-label="5 out of 5 stars">★★★★★</p>
+          </article>
+        </li>
+        <li>
+          <article class="book-tile">
+            <h3><a href="book.html">lantern lake</a></h3>
+            <p class="star-rating" aria-label="4 out of 5 stars">★★★★☆</p>
+          </article>
+        </li>
+        <li>
+          <article class="book-tile">
+            <h3><a href="book.html">night pages</a></h3>
+            <p class="star-rating" aria-label="5 out of 5 stars">★★★★★</p>
+          </article>
+        </li>
+      </ul>
+      <p class="panel-link"><a href="finished.html">view more</a></p>
+    </section>
+    </div>
+  </main>
+  </div>
+</body>
+</html>
