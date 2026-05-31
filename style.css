@@ -276,7 +276,8 @@ footer {
 
 header,
 main > section,
-main > article {
+main > article,
+.shelf-pair > section {
   border: var(--line);
   border-radius: 8px;
   background:
@@ -445,10 +446,17 @@ main {
 .shelf-pair {
   display: grid;
   gap: 22px;
+  align-items: stretch;
+}
+
+.shelf-pair > .book-shelf {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 main > section,
-main > article {
+main > article,
+.shelf-pair > section {
   padding: 26px;
 }
 
@@ -535,12 +543,14 @@ article section {
 
 main > section,
 section section,
-article section {
+article section,
+.shelf-pair > section {
   position: relative;
 }
 
 main > section > h2 + p:not(.panel-link),
-section section > h3 + p:not(.panel-link) {
+section section > h3 + p:not(.panel-link),
+.shelf-pair > section > h2 + p:not(.panel-link) {
   position: absolute;
   top: 24px;
   right: 22px;
@@ -1318,12 +1328,14 @@ footer {
 
   header,
   main > section,
-  main > article {
+  main > article,
+  .shelf-pair > section {
     padding: 18px;
   }
 
   main > section > h2 + p,
-  section section > h3 + p {
+  section section > h3 + p,
+  .shelf-pair > section > h2 + p {
     position: static;
     max-width: none;
     margin-bottom: 14px;
