@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>moon-lit | home</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
   <div class="site-shell">
@@ -37,9 +37,28 @@
       <h2 id="page-title-heading">home</h2>
     </section>
 
+    <section class="home-stats" aria-labelledby="stats-heading">
+      <h3 id="stats-heading">stats</h3>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span>pages read</span>
+          <strong>1,248</strong>
+        </div>
+        <div class="stat-card">
+          <span>books finished</span>
+          <strong>7</strong>
+        </div>
+        <div class="stat-card">
+          <span>shared books</span>
+          <strong>3</strong>
+        </div>
+      </div>
+      <progress value="1248" max="5000">1,248 of 5,000 pages</progress>
+    </section>
+
     <section class="home-overview">
 
-      <section aria-labelledby="currently-reading-heading">
+      <section class="home-current" aria-labelledby="currently-reading-heading">
         <h3 id="currently-reading-heading">currently reading</h3>
         <article>
           <h4><a href="book.html">example book title</a></h4>
@@ -57,30 +76,11 @@
         </article>
       </section>
 
-      <section aria-labelledby="stats-heading">
-        <h3 id="stats-heading">stats</h3>
-        <div class="stats-grid">
-          <div class="stat-card">
-            <span>pages read</span>
-            <strong>1,248</strong>
-          </div>
-          <div class="stat-card">
-            <span>books finished</span>
-            <strong>7</strong>
-          </div>
-          <div class="stat-card">
-            <span>shared books</span>
-            <strong>3</strong>
-          </div>
-        </div>
-        <progress value="1248" max="5000">1,248 of 5,000 pages</progress>
-      </section>
-
-      <section aria-labelledby="shared-reading-heading">
+      <section class="home-shared" aria-labelledby="shared-reading-heading">
         <h3 id="shared-reading-heading">shared reading</h3>
         <article>
           <h4><a href="book.html">example shared book</a></h4>
-          <dl class="detail-grid compact-mobile">
+          <dl class="detail-grid compact-mobile shared-summary">
             <div>
               <dt>your page</dt>
               <dd>184</dd>
@@ -98,10 +98,11 @@
               <dd>2</dd>
             </div>
           </dl>
+          <p class="panel-link"><a href="shared.html">open shared library</a></p>
         </article>
       </section>
 
-      <section aria-labelledby="recent-activity-heading">
+      <section class="home-activity" aria-labelledby="recent-activity-heading">
         <h3 id="recent-activity-heading">recent activity</h3>
         <ol class="activity-list">
           <li>kaitie finished example book title.</li>
@@ -109,10 +110,9 @@
           <li>kaitie added a quote from example shared book, page 126.</li>
           <li>kaitie started reading example future book.</li>
           <li>a shared quote from example shared book, page 82, became visible.</li>
-          <li>kaitie added example book title to her bookshelf.</li>
-          <li>kaitie reached page 126 in example shared book.</li>
         </ol>
       </section>
+
     </section>
   </main>
 
