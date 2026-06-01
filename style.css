@@ -1418,12 +1418,24 @@ footer {
   }
 
   .has-page-actions {
-    display: grid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
   }
 
   .has-page-actions .action-buttons {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
+    gap: 7px;
+    flex: 0 0 auto;
+  }
+
+  .has-page-actions .action-buttons button {
+    min-height: 32px;
+    padding: 5px 8px;
+    font-size: 0.78rem;
+    white-space: nowrap;
   }
 
   header {
