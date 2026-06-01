@@ -10,9 +10,19 @@
 <body>
   <div class="site-shell">
   <header>
-    <h1>bookshelf</h1>
+    <h1>moon-lit</h1>
 
-    <nav aria-label="Main navigation">
+    <button class="nav-toggle" type="button" popovertarget="mobile-nav" aria-label="open navigation"><span aria-hidden="true"></span></button>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="library.html" aria-current="page">my library</a></li>
+        <li><a href="shared.html">our library</a></li>
+        <li><a href="friends.html">friends</a></li>
+        <li><a href="account.html">account</a></li>
+      </ul>
+    </nav>
+    <nav id="mobile-nav" class="mobile-nav-popover" popover aria-label="Mobile navigation">
       <ul>
         <li><a href="index.html">home</a></li>
         <li><a href="library.html" aria-current="page">my library</a></li>
@@ -24,6 +34,10 @@
   </header>
 
   <main>
+    <section class="page-title" aria-labelledby="page-title-heading">
+      <h2 id="page-title-heading">bookshelf</h2>
+    </section>
+
     <section class="book-shelf shelf-page" aria-labelledby="bookshelf-heading">
       <h2 id="bookshelf-heading">bookshelf</h2>
       <p>to be read.</p>
