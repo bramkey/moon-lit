@@ -6,7 +6,7 @@
   <title>moon-lit | home</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=68">
+  <link rel="stylesheet" href="style.css?v=102">
 </head>
 <body>
   <div class="site-shell">
@@ -21,6 +21,7 @@
         <li><a href="friends.html">friends</a></li>
       </ul>
     </nav>
+
     <nav id="mobile-nav" class="mobile-nav-popover" popover aria-label="Mobile navigation">
       <ul>
         <li><a href="index.html" aria-current="page">home</a></li>
@@ -32,8 +33,7 @@
     </nav>
   </header>
 
-  <main>
-    <section class="home-layout">
+  <main class="page-shell home-layout">
       <aside class="home-sidebar" aria-label="Account and reading stats">
         <section class="account-panel" aria-labelledby="account-panel-heading">
           <div class="account-profile">
@@ -46,33 +46,86 @@
           <div class="account-actions">
             <a href="account.html">log in</a>
             <a href="account.html">sign up</a>
-            <a href="account.html">view account</a>
+            <a href="account.html">view profile</a>
             <a href="account.html">edit account</a>
           </div>
         </section>
 
         <section class="home-stats" aria-labelledby="stats-heading">
-          <h3 id="stats-heading">stats</h3>
-          <div class="stats-grid">
-            <div class="stat-card">
-              <span>pages read</span>
-              <strong>1,248</strong>
+          <h3 id="stats-heading" data-stats-heading>monthly stats</h3>
+          <div class="stats-carousel">
+            <div class="stats-panel is-active" data-stats-panel="monthly">
+              <div class="stats-grid">
+                <div class="stat-card">
+                  <span>pages read</span>
+                  <strong>412</strong>
+                </div>
+                <div class="stat-card">
+                  <span>books finished</span>
+                  <strong>2</strong>
+                </div>
+                <div class="stat-card">
+                  <span>quotes saved</span>
+                  <strong>9</strong>
+                </div>
+                <div class="stat-card">
+                  <span>shared reads</span>
+                  <strong>3</strong>
+                </div>
+              </div>
             </div>
-            <div class="stat-card">
-              <span>books finished</span>
-              <strong>7</strong>
+            <div class="stats-panel" data-stats-panel="yearly" hidden>
+              <div class="stats-grid">
+                <div class="stat-card">
+                  <span>pages read</span>
+                  <strong>4,820</strong>
+                </div>
+                <div class="stat-card">
+                  <span>books finished</span>
+                  <strong>18</strong>
+                </div>
+                <div class="stat-card">
+                  <span>quotes saved</span>
+                  <strong>74</strong>
+                </div>
+                <div class="stat-card">
+                  <span>new authors</span>
+                  <strong>11</strong>
+                </div>
+              </div>
             </div>
-            <div class="stat-card">
-              <span>shared books</span>
-              <strong>3</strong>
+            <div class="stats-panel" data-stats-panel="all-time" hidden>
+              <div class="stats-grid">
+                <div class="stat-card">
+                  <span>pages read</span>
+                  <strong>12k</strong>
+                </div>
+                <div class="stat-card">
+                  <span>books finished</span>
+                  <strong>47</strong>
+                </div>
+                <div class="stat-card">
+                  <span>quotes saved</span>
+                  <strong>183</strong>
+                </div>
+                <div class="stat-card">
+                  <span>shared books</span>
+                  <strong>16</strong>
+                </div>
+              </div>
             </div>
           </div>
-          <progress value="1248" max="5000">1,248 of 5,000 pages</progress>
+          <div class="stats-dots" aria-label="choose stats view">
+            <button class="is-active" type="button" data-stats-target="monthly" aria-label="show monthly stats" aria-pressed="true"></button>
+            <button type="button" data-stats-target="yearly" aria-label="show yearly stats" aria-pressed="false"></button>
+            <button type="button" data-stats-target="all-time" aria-label="show all-time stats" aria-pressed="false"></button>
+          </div>
         </section>
+        <button class="sidebar-toggle sidebar-toggle-inline" type="button" aria-label="hide sidebar" title="hide sidebar" aria-pressed="false"><i class="fa-solid fa-angles-left" aria-hidden="true"></i></button>
       </aside>
 
-      <div class="home-main">
-    <section class="page-title" aria-labelledby="page-title-heading">
+      <div class="page-main home-main">
+    <section class="page-title home-title" aria-labelledby="page-title-heading">
       <h2 id="page-title-heading">home</h2>
     </section>
 
@@ -161,12 +214,20 @@
 
     </section>
       </div>
-    </section>
   </main>
 
   <footer>
     <p>created for someone I love to the moon and back.</p>
   </footer>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+

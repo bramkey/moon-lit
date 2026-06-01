@@ -6,7 +6,7 @@
   <title>moon-lit | bookmarked</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=68">
+  <link rel="stylesheet" href="style.css?v=102">
 </head>
 <body>
   <div class="site-shell">
@@ -22,6 +22,7 @@
         <li><a href="friends.html">friends</a></li>
       </ul>
     </nav>
+
     <nav id="mobile-nav" class="mobile-nav-popover" popover aria-label="Mobile navigation">
       <ul>
         <li><a href="index.html">home</a></li>
@@ -33,8 +34,98 @@
     </nav>
   </header>
 
-  <main>
-    <section class="page-title" aria-labelledby="page-title-heading">
+  <main class="page-shell">
+      <aside class="home-sidebar" aria-label="Account and reading stats">
+        <section class="account-panel" aria-labelledby="account-panel-heading">
+          <div class="account-profile">
+            <span class="account-avatar" aria-hidden="true"><img src="favicon.svg" alt=""></span>
+            <div>
+              <h3 id="account-panel-heading">welcome back</h3>
+              <p>moon-lit reader</p>
+            </div>
+          </div>
+          <div class="account-actions">
+            <a href="account.html">log in</a>
+            <a href="account.html">sign up</a>
+            <a href="account.html">view profile</a>
+            <a href="account.html">edit account</a>
+          </div>
+        </section>
+
+        <section class="home-stats" aria-labelledby="stats-heading">
+          <h3 id="stats-heading" data-stats-heading>monthly stats</h3>
+          <div class="stats-carousel">
+            <div class="stats-panel is-active" data-stats-panel="monthly">
+              <div class="stats-grid">
+                <div class="stat-card">
+                  <span>pages read</span>
+                  <strong>412</strong>
+                </div>
+                <div class="stat-card">
+                  <span>books finished</span>
+                  <strong>2</strong>
+                </div>
+                <div class="stat-card">
+                  <span>quotes saved</span>
+                  <strong>9</strong>
+                </div>
+                <div class="stat-card">
+                  <span>shared reads</span>
+                  <strong>3</strong>
+                </div>
+              </div>
+            </div>
+            <div class="stats-panel" data-stats-panel="yearly" hidden>
+              <div class="stats-grid">
+                <div class="stat-card">
+                  <span>pages read</span>
+                  <strong>4,820</strong>
+                </div>
+                <div class="stat-card">
+                  <span>books finished</span>
+                  <strong>18</strong>
+                </div>
+                <div class="stat-card">
+                  <span>quotes saved</span>
+                  <strong>74</strong>
+                </div>
+                <div class="stat-card">
+                  <span>new authors</span>
+                  <strong>11</strong>
+                </div>
+              </div>
+            </div>
+            <div class="stats-panel" data-stats-panel="all-time" hidden>
+              <div class="stats-grid">
+                <div class="stat-card">
+                  <span>pages read</span>
+                  <strong>12k</strong>
+                </div>
+                <div class="stat-card">
+                  <span>books finished</span>
+                  <strong>47</strong>
+                </div>
+                <div class="stat-card">
+                  <span>quotes saved</span>
+                  <strong>183</strong>
+                </div>
+                <div class="stat-card">
+                  <span>shared books</span>
+                  <strong>16</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="stats-dots" aria-label="choose stats view">
+            <button class="is-active" type="button" data-stats-target="monthly" aria-label="show monthly stats" aria-pressed="true"></button>
+            <button type="button" data-stats-target="yearly" aria-label="show yearly stats" aria-pressed="false"></button>
+            <button type="button" data-stats-target="all-time" aria-label="show all-time stats" aria-pressed="false"></button>
+          </div>
+        </section>
+        <button class="sidebar-toggle sidebar-toggle-inline" type="button" aria-label="hide sidebar" title="hide sidebar" aria-pressed="false"><i class="fa-solid fa-angles-left" aria-hidden="true"></i></button>
+      </aside>
+      <div class="page-main">
+<section class="page-title" aria-labelledby="page-title-heading">
       <h2 id="page-title-heading">bookmarked</h2>
     </section>
 
@@ -42,17 +133,27 @@
       <h2 id="bookmarked-heading">bookmarked</h2>
       <p>currently reading.</p>
       <ul>
-        <li><article class="book-tile"><h3><a href="book.html">dungeon crawler carl</a></h3><p>184 / 420 pages</p><progress value="184" max="420">184 of 420 pages</progress></article></li>
-        <li><article class="book-tile"><h3><a href="book.html">twilight</a></h3><p>62 / 280 pages</p><progress value="62" max="280">62 of 280 pages</progress></article></li>
-        <li><article class="book-tile"><h3><a href="book.html">fourth wing</a></h3><p>211 / 390 pages</p><progress value="211" max="390">211 of 390 pages</progress></article></li>
-        <li><article class="book-tile"><h3><a href="book.html">game of thrones</a></h3><p>44 / 310 pages</p><progress value="44" max="310">44 of 310 pages</progress></article></li>
-        <li><article class="book-tile"><h3><a href="book.html">midnight chapter</a></h3><p>109 / 260 pages</p><progress value="109" max="260">109 of 260 pages</progress></article></li>
+        <li><article class="book-tile"><h3><a href="book.html">dungeon crawler carl</a></h3><p class="book-meta"><span>matt dinniman</span></p><p>184 / 420 pages</p><progress value="184" max="420">184 of 420 pages</progress><p class="started-date">started may 12</p></article></li>
+        <li><article class="book-tile"><h3><a href="book.html">twilight</a></h3><p class="book-meta"><span>stephenie meyer</span></p><p>62 / 280 pages</p><progress value="62" max="280">62 of 280 pages</progress><p class="started-date">started may 20</p></article></li>
+        <li><article class="book-tile"><h3><a href="book.html">fourth wing</a></h3><p class="book-meta"><span>rebecca yarros</span></p><p>211 / 390 pages</p><progress value="211" max="390">211 of 390 pages</progress><p class="started-date">started may 27</p></article></li>
+        <li><article class="book-tile"><h3><a href="book.html">game of thrones</a></h3><p class="book-meta"><span>george r. r. martin</span></p><p>44 / 310 pages</p><progress value="44" max="310">44 of 310 pages</progress><p class="started-date">started may 29</p></article></li>
+        <li><article class="book-tile"><h3><a href="book.html">a court of thorns and roses</a></h3><p class="book-meta"><span>sarah j. maas</span></p><p>109 / 260 pages</p><progress value="109" max="260">109 of 260 pages</progress><p class="started-date">started may 31</p></article></li>
       </ul>
     </section>
+      </div>
   </main>
   <footer>
     <p>created for someone I love to the moon and back.</p>
   </footer>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
