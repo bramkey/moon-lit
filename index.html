@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>moon-lit | home</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css?v=68">
 </head>
 <body>
   <div class="site-shell">
@@ -18,7 +19,6 @@
         <li><a href="library.html">my library</a></li>
         <li><a href="shared.html">our library</a></li>
         <li><a href="friends.html">friends</a></li>
-        <li><a href="account.html">account</a></li>
       </ul>
     </nav>
     <nav id="mobile-nav" class="mobile-nav-popover" popover aria-label="Mobile navigation">
@@ -33,35 +33,56 @@
   </header>
 
   <main>
+    <section class="home-layout">
+      <aside class="home-sidebar" aria-label="Account and reading stats">
+        <section class="account-panel" aria-labelledby="account-panel-heading">
+          <div class="account-profile">
+            <span class="account-avatar" aria-hidden="true"><img src="favicon.svg" alt=""></span>
+            <div>
+              <h3 id="account-panel-heading">welcome back</h3>
+              <p>moon-lit reader</p>
+            </div>
+          </div>
+          <div class="account-actions">
+            <a href="account.html">log in</a>
+            <a href="account.html">sign up</a>
+            <a href="account.html">view account</a>
+            <a href="account.html">edit account</a>
+          </div>
+        </section>
+
+        <section class="home-stats" aria-labelledby="stats-heading">
+          <h3 id="stats-heading">stats</h3>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span>pages read</span>
+              <strong>1,248</strong>
+            </div>
+            <div class="stat-card">
+              <span>books finished</span>
+              <strong>7</strong>
+            </div>
+            <div class="stat-card">
+              <span>shared books</span>
+              <strong>3</strong>
+            </div>
+          </div>
+          <progress value="1248" max="5000">1,248 of 5,000 pages</progress>
+        </section>
+      </aside>
+
+      <div class="home-main">
     <section class="page-title" aria-labelledby="page-title-heading">
       <h2 id="page-title-heading">home</h2>
     </section>
 
-    <section class="home-stats" aria-labelledby="stats-heading">
-      <h3 id="stats-heading">stats</h3>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <span>pages read</span>
-          <strong>1,248</strong>
-        </div>
-        <div class="stat-card">
-          <span>books finished</span>
-          <strong>7</strong>
-        </div>
-        <div class="stat-card">
-          <span>shared books</span>
-          <strong>3</strong>
-        </div>
-      </div>
-      <progress value="1248" max="5000">1,248 of 5,000 pages</progress>
-    </section>
-
     <section class="home-overview">
 
+      <div class="home-reading-stack">
       <section class="home-current" aria-labelledby="currently-reading-heading">
         <h3 id="currently-reading-heading">currently reading</h3>
         <article>
-          <h4><a href="book.html">example book title</a></h4>
+          <h4><a href="book.html">dungeon crawler carl</a></h4>
           <dl class="detail-grid compact-mobile">
             <div>
               <dt>tags</dt>
@@ -79,7 +100,7 @@
       <section class="home-shared" aria-labelledby="shared-reading-heading">
         <h3 id="shared-reading-heading">shared reading</h3>
         <article>
-          <h4><a href="book.html">example shared book</a></h4>
+          <h4><a href="book.html">twilight</a></h4>
           <dl class="detail-grid compact-mobile shared-summary">
             <div>
               <dt>your page</dt>
@@ -101,18 +122,45 @@
           <p class="panel-link"><a href="shared.html">open shared library</a></p>
         </article>
       </section>
+      </div>
 
       <section class="home-activity" aria-labelledby="recent-activity-heading">
         <h3 id="recent-activity-heading">recent activity</h3>
         <ol class="activity-list">
-          <li>kaitie finished example book title.</li>
-          <li>kaitie rated example shared book 5 stars.</li>
-          <li>kaitie added a quote from example shared book, page 126.</li>
-          <li>kaitie started reading example future book.</li>
-          <li>a shared quote from example shared book, page 82, became visible.</li>
+          <li data-icon="✦">
+            <span class="activity-icon" aria-hidden="true"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+            <span class="activity-avatar" aria-hidden="true">k</span>
+            <span class="activity-copy"><a class="activity-person" href="friend.html">kaitie</a> finished <a class="activity-book" href="book.html">dungeon crawler carl</a>.</span>
+            <time datetime="2026-06-01">today</time>
+          </li>
+          <li data-icon="★">
+            <span class="activity-icon" aria-hidden="true"><i class="fa-solid fa-star"></i></span>
+            <span class="activity-avatar" aria-hidden="true">p</span>
+            <span class="activity-copy"><a class="activity-person" href="friend.html">peach</a> rated <a class="activity-book" href="book.html">twilight</a> 5 stars.</span>
+            <time datetime="2026-05-31">may 31</time>
+          </li>
+          <li class="quote-activity" data-icon="">
+            <span class="activity-icon" aria-hidden="true"><i class="fa-solid fa-quote-left"></i></span>
+            <span class="activity-avatar" aria-hidden="true">k</span>
+            <span class="activity-copy"><a class="activity-person" href="friend.html">kaitie</a> bookmarked a quote from <a class="activity-book" href="book.html">twilight</a>, page 126.</span>
+            <time datetime="2026-05-31">may 31</time>
+          </li>
+          <li data-icon="▤">
+            <span class="activity-icon" aria-hidden="true"><i class="fa-solid fa-book-open"></i></span>
+            <span class="activity-avatar" aria-hidden="true">c</span>
+            <span class="activity-copy"><a class="activity-person" href="friend.html">cyrena</a> started reading <a class="activity-book" href="book.html">fourth wing</a>.</span>
+            <time datetime="2026-05-30">may 30</time>
+          </li>
+          <li class="system-activity" data-icon="!">
+            <span class="activity-icon" aria-hidden="true"><i class="fa-solid fa-exclamation"></i></span>
+            <span class="activity-copy">a shared quote from <a class="activity-book" href="book.html">twilight</a>, page 82, became visible.</span>
+            <time datetime="2026-05-30">may 30</time>
+          </li>
         </ol>
       </section>
 
+    </section>
+      </div>
     </section>
   </main>
 
