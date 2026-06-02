@@ -6,7 +6,7 @@
   <title>moon-lit | shared library</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=110">
+  <link rel="stylesheet" href="style.css?v=149">
 </head>
 <body>
   <div class="site-shell">
@@ -16,6 +16,7 @@
     <button class="nav-toggle" type="button" popovertarget="mobile-nav" aria-label="open navigation"><span aria-hidden="true"></span></button>
     <nav class="desktop-nav" aria-label="Main navigation">
       <ul>
+        <li class="notifications-nav-item"><button class="notifications-button" type="button" popovertarget="notifications-popover" aria-label="open notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i><span class="notification-dot" aria-hidden="true"></span></button></li>
         <li><a href="index.html">home</a></li>
         <li><a href="library.html">my library</a></li>
         <li><a href="shared.html" aria-current="page">shared library</a></li>
@@ -32,6 +33,37 @@
         <li><a href="account.html">account</a></li>
       </ul>
     </nav>
+    <section id="notifications-popover" class="notifications-popover" popover aria-labelledby="notifications-heading">
+            <div class="notifications-heading-row">
+        <h2 id="notifications-heading">notifications</h2>
+        <button class="mark-read-button" type="button">mark all as read</button>
+      </div>
+      <ul>
+        <li class="notification-item request-book has-actions">
+          <span class="notification-icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span>
+          <p><a href="friend.html">peach</a> wants to share <a href="book.html">lightbringer</a> with you.</p>
+          <small>today</small>
+          <div class="notification-actions" aria-label="shared book request actions">
+            <button type="button">approve</button>
+            <button type="button">decline</button>
+          </div>
+        </li>
+        <li class="notification-item request-friend has-actions">
+          <span class="notification-icon"><i class="fa-solid fa-user-plus" aria-hidden="true"></i></span>
+          <p><a href="friend.html">cyrena</a> sent you a friend request.</p>
+          <small>yesterday</small>
+          <div class="notification-actions" aria-label="friend request actions">
+            <button type="button">approve</button>
+            <button type="button">decline</button>
+          </div>
+        </li>
+        <li class="notification-item stopped-sharing">
+          <span class="notification-icon"><i class="fa-solid fa-link-slash" aria-hidden="true"></i></span>
+          <p><a href="friend.html">kaitie</a> stopped sharing <a href="book.html">twilight</a> with you.</p>
+          <small>may 29</small>
+        </li>
+      </ul>
+    </section>
   </header>
 
   <main class="page-shell">
@@ -40,8 +72,8 @@
           <div class="account-profile">
             <span class="account-avatar" aria-hidden="true"><img src="favicon.svg" alt=""></span>
             <div>
-              <h3 id="account-panel-heading">welcome back</h3>
-              <p>moon-lit reader</p>
+              <h3 id="account-panel-heading">welcome back,</h3>
+              <p>twinkling star</p>
             </div>
           </div>
           <div class="account-actions">
@@ -122,98 +154,179 @@
             <button type="button" data-stats-target="all-time" aria-label="show all-time stats" aria-pressed="false"></button>
           </div>
         </section>
+        <section class="goals-panel" aria-labelledby="goals-heading">
+          <div class="goals-heading-row"><h3 id="goals-heading">goals</h3><a class="goals-add" href="account.html#add-goal-heading" aria-label="add a goal" title="add a goal"><i class="fa-solid fa-plus" aria-hidden="true"></i></a></div>
+          <div class="goal-list">
+            <article class="goal-item">
+              <div>
+                <h4>10 books this month</h4>
+                <p>finish 2 more before the month ends.</p>
+              </div>
+              <progress value="8" max="10">8 of 10 books</progress>
+            </article>
+            <article class="goal-item">
+              <div>
+                <h4>100 books this year</h4>
+                <p>47 finished so far.</p>
+              </div>
+              <progress value="47" max="100">47 of 100 books</progress>
+            </article>
+            <article class="goal-item is-complete"><button class="goal-delete" type="button" aria-label="completed goal" title="completed goal"><i class="fa-solid fa-check" aria-hidden="true"></i></button><div><h4>5 shared books</h4><p>completed! good job, star reader.</p></div><progress value="5" max="5">5 of 5 shared books</progress></article>
+            <article class="goal-item">
+              <div>
+                <h4>5 new genres</h4>
+                <p>2 of 5 explored so far.</p>
+              </div>
+              <progress value="2" max="5">2 of 5 new genres</progress>
+            </article>
+          </div>
+        </section>
         <button class="sidebar-toggle sidebar-toggle-inline" type="button" aria-label="hide sidebar" title="hide sidebar" aria-pressed="false"><i class="fa-solid fa-angles-left" aria-hidden="true"></i></button>
       </aside>
       <div class="page-main">
-<section class="page-title" aria-labelledby="page-title-heading">
+<section class="page-title has-page-actions" aria-labelledby="page-title-heading">
       <h2 id="page-title-heading">shared library</h2>
+      <div class="action-buttons">
+        <button type="button" popovertarget="add-shared-book-popover">share a book</button>
+      </div>
     </section>
 
-    <article>
-      <h2><a href="book.html">twilight</a></h2>
-      <p>author name</p>
-
-      <section aria-labelledby="shared-progress-heading">
-        <h3 id="shared-progress-heading">shared progress</h3>
-        <dl class="detail-grid">
-          <div>
-            <dt>your page</dt>
-            <dd>184</dd>
-          </div>
-          <div>
-            <dt>their page</dt>
-            <dd>126</dd>
-          </div>
-        </dl>
-      </section>
-
-      <section aria-labelledby="shared-ratings-heading">
-        <h3 id="shared-ratings-heading">ratings</h3>
-        <dl class="detail-grid">
-          <div>
-            <dt>your rating</dt>
-            <dd>4 out of 5</dd>
-          </div>
-          <div>
-            <dt>their rating</dt>
-            <dd>not rated yet</dd>
-          </div>
-        </dl>
-      </section>
-
-      <section aria-labelledby="shared-notes-heading">
-        <h3 id="shared-notes-heading">shared notes</h3>
-        <ul>
-          <li>a note visible to both readers.</li>
-          <li>a private note visible only to its author.</li>
-        </ul>
-      </section>
-
-      <section aria-labelledby="quote-access-heading">
-        <h3 id="quote-access-heading">quote access</h3>
-        <p>3 quotes are visible to both readers.</p>
-        <p>2 quotes are still locked by page progress.</p>
-      </section>
-    </article>
-
-    <section aria-labelledby="add-quote-heading">
-      <h2 id="add-quote-heading">add a shared quote</h2>
+    <section id="add-shared-book-popover" class="compact-form modal-panel" popover aria-labelledby="add-shared-book-heading">
+      <h2 id="add-shared-book-heading">share a book</h2>
+      <button class="modal-close" type="button" popovertarget="add-shared-book-popover" popovertargetaction="hide">close</button>
       <form>
-        <p>
-          <label for="quote-book">book</label>
-          <input id="quote-book" name="book" type="text">
-        </p>
+        <div class="form-fields">
+          <p>
+            <label for="shared-book">book</label>
+            <select id="shared-book" name="book">
+              <option value="">choose a book</option>
+              <option value="dungeon-crawler-carl">dungeon crawler carl</option>
+              <option value="twilight">twilight</option>
+              <option value="fourth-wing">fourth wing</option>
+              <option value="game-of-thrones">game of thrones</option>
+              <option value="acotar">a court of thorns and roses</option>
+            </select>
+          </p>
 
-        <p>
-          <label for="quote-page">page number</label>
-          <input id="quote-page" name="page" type="number" min="1">
-        </p>
+          <p>
+            <label for="shared-friend">friend</label>
+            <select id="shared-friend" name="friend">
+              <option value="">choose a friend</option>
+              <option value="kaitie">kaitie</option>
+              <option value="peach">peach</option>
+              <option value="cyrena">cyrena</option>
+            </select>
+          </p>
+        </div>
 
-        <p>
-          <label for="quote-text">quote</label>
-          <textarea id="quote-text" name="quote" rows="4"></textarea>
-        </p>
-
-        <button type="submit">save quote</button>
+        <button type="submit">share a book</button>
       </form>
     </section>
 
-    <section aria-labelledby="visible-quotes-heading">
-      <h2 id="visible-quotes-heading">visible shared quotes</h2>
-      <blockquote>
-        <p>a quote both readers are far enough along to see.</p>
-        <footer>twilight, page 82</footer>
-      </blockquote>
-    </section>
-
-    <section aria-labelledby="locked-quotes-heading">
-      <h2 id="locked-quotes-heading">locked shared quotes</h2>
+    <section class="shared-friends" aria-labelledby="shared-friends-heading">
+      <h2 id="shared-friends-heading">currently sharing with</h2>
       <ul>
         <li>
-          quote from twilight, page 210.
-          unlocks when your logged progress reaches page 210.
+          <a href="friend.html">
+            <span class="friend-initial">k</span>
+            <span>
+              <strong>kaitie</strong>
+              <small>2 shared books</small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="friend.html">
+            <span class="friend-initial">p</span>
+            <span>
+              <strong>peach</strong>
+              <small>2 shared books</small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="friend.html">
+            <span class="friend-initial">c</span>
+            <span>
+              <strong>cyrena</strong>
+              <small>2 shared books</small>
+            </span>
+          </a>
         </li>
       </ul>
+    </section>
+
+    <section class="book-shelf shelf-page shared-shelf" aria-labelledby="shared-books-heading">
+      <h2 id="shared-books-heading">shared books</h2>
+      <label class="friend-filter" for="shared-friend-filter" aria-label="search shared books by friend">
+        <input id="shared-friend-filter" type="search" placeholder="search by friend" autocomplete="off">
+      </label>
+      <ul>
+        <li data-shared-friends="kaitie">
+          <article class="book-tile">
+            <div class="shared-avatars" aria-label="shared with kaitie">
+              <a href="friend.html" aria-label="kaitie">k</a>
+            </div>
+            <h3><a href="book.html">twilight</a></h3>
+            <p class="book-meta"><span>stephenie meyer</span></p>
+            <p>you: 184 / them: 126</p>
+            <progress value="126" max="280">126 of 280 pages</progress>
+            <p class="started-date locked-waiting">2 locked quotes waiting</p>
+          </article>
+        </li>
+        <li data-shared-friends="peach">
+          <article class="book-tile">
+            <div class="shared-avatars" aria-label="shared with peach">
+              <a href="friend.html" aria-label="peach">p</a>
+            </div>
+            <h3><a href="book.html">fourth wing</a></h3>
+            <p class="book-meta"><span>rebecca yarros</span></p>
+            <p>you: 211 / them: 190</p>
+            <progress value="190" max="390">190 of 390 pages</progress>
+            <p class="started-date locked-waiting">1 locked quote waiting</p>
+          </article>
+        </li>
+        <li data-shared-friends="cyrena peach">
+          <article class="book-tile">
+            <div class="shared-avatars" aria-label="shared with cyrena and peach">
+              <a href="friend.html" aria-label="cyrena">c</a>
+              <a href="friend.html" aria-label="peach">p</a>
+            </div>
+            <h3><a href="book.html">dungeon crawler carl</a></h3>
+            <p class="book-meta"><span>matt dinniman</span></p>
+            <p>you: 184 / them: 184</p>
+            <progress value="184" max="420">184 of 420 pages</progress>
+            <p class="started-date">no locked quotes waiting</p>
+          </article>
+        </li>
+        <li data-shared-friends="kaitie cyrena">
+          <article class="book-tile">
+            <div class="shared-avatars" aria-label="shared with kaitie and cyrena">
+              <a href="friend.html" aria-label="kaitie">k</a>
+              <a href="friend.html" aria-label="cyrena">c</a>
+            </div>
+            <h3><a href="book.html">a court of thorns and roses</a></h3>
+            <p class="book-meta"><span>sarah j. maas</span></p>
+            <p>you: 109 / them: 82</p>
+            <progress value="82" max="260">82 of 260 pages</progress>
+            <p class="started-date locked-waiting">2 locked quotes waiting</p>
+          </article>
+        </li>
+        <li data-shared-friends="peach">
+          <article class="book-tile not-started-book">
+            <p class="book-alert">not started yet</p>
+            <div class="shared-avatars" aria-label="shared with peach">
+              <a href="friend.html" aria-label="peach">p</a>
+            </div>
+            <h3><a href="book.html">assassin's blade</a></h3>
+            <p class="book-meta"><span>sarah j. maas</span></p>
+            <p>you: 0 / them: 0</p>
+            <progress value="0" max="448">0 of 448 pages</progress>
+            <p class="started-date">no locked quotes waiting</p>
+          </article>
+        </li>
+      </ul>
+      <p class="empty-filter-message" hidden>no shared books found for that friend.</p>
     </section>
       </div>
   </main>
@@ -221,9 +334,16 @@
     <p>created for someone I love to the moon and back.</p>
   </footer>
   </div>
-  <script src="script.js"></script>
+  <script src="script.js?v=1"></script>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 

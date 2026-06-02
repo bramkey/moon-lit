@@ -6,7 +6,7 @@
   <title>moon-lit | friend profile</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=110">
+  <link rel="stylesheet" href="style.css?v=149">
 </head>
 <body>
   <div class="site-shell">
@@ -16,6 +16,7 @@
     <button class="nav-toggle" type="button" popovertarget="mobile-nav" aria-label="open navigation"><span aria-hidden="true"></span></button>
     <nav class="desktop-nav" aria-label="Main navigation">
       <ul>
+        <li class="notifications-nav-item"><button class="notifications-button" type="button" popovertarget="notifications-popover" aria-label="open notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i><span class="notification-dot" aria-hidden="true"></span></button></li>
         <li><a href="index.html">home</a></li>
         <li><a href="library.html">my library</a></li>
         <li><a href="shared.html">shared library</a></li>
@@ -32,6 +33,37 @@
         <li><a href="account.html">account</a></li>
       </ul>
     </nav>
+    <section id="notifications-popover" class="notifications-popover" popover aria-labelledby="notifications-heading">
+            <div class="notifications-heading-row">
+        <h2 id="notifications-heading">notifications</h2>
+        <button class="mark-read-button" type="button">mark all as read</button>
+      </div>
+      <ul>
+        <li class="notification-item request-book has-actions">
+          <span class="notification-icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span>
+          <p><a href="friend.html">peach</a> wants to share <a href="book.html">lightbringer</a> with you.</p>
+          <small>today</small>
+          <div class="notification-actions" aria-label="shared book request actions">
+            <button type="button">approve</button>
+            <button type="button">decline</button>
+          </div>
+        </li>
+        <li class="notification-item request-friend has-actions">
+          <span class="notification-icon"><i class="fa-solid fa-user-plus" aria-hidden="true"></i></span>
+          <p><a href="friend.html">cyrena</a> sent you a friend request.</p>
+          <small>yesterday</small>
+          <div class="notification-actions" aria-label="friend request actions">
+            <button type="button">approve</button>
+            <button type="button">decline</button>
+          </div>
+        </li>
+        <li class="notification-item stopped-sharing">
+          <span class="notification-icon"><i class="fa-solid fa-link-slash" aria-hidden="true"></i></span>
+          <p><a href="friend.html">kaitie</a> stopped sharing <a href="book.html">twilight</a> with you.</p>
+          <small>may 29</small>
+        </li>
+      </ul>
+    </section>
   </header>
 
   <main class="page-shell">
@@ -40,8 +72,8 @@
           <div class="account-profile">
             <span class="account-avatar" aria-hidden="true"><img src="favicon.svg" alt=""></span>
             <div>
-              <h3 id="account-panel-heading">welcome back</h3>
-              <p>moon-lit reader</p>
+              <h3 id="account-panel-heading">welcome back,</h3>
+              <p>twinkling star</p>
             </div>
           </div>
           <div class="account-actions">
@@ -122,6 +154,33 @@
             <button type="button" data-stats-target="all-time" aria-label="show all-time stats" aria-pressed="false"></button>
           </div>
         </section>
+        <section class="goals-panel" aria-labelledby="goals-heading">
+          <div class="goals-heading-row"><h3 id="goals-heading">goals</h3><a class="goals-add" href="account.html#add-goal-heading" aria-label="add a goal" title="add a goal"><i class="fa-solid fa-plus" aria-hidden="true"></i></a></div>
+          <div class="goal-list">
+            <article class="goal-item">
+              <div>
+                <h4>10 books this month</h4>
+                <p>finish 2 more before the month ends.</p>
+              </div>
+              <progress value="8" max="10">8 of 10 books</progress>
+            </article>
+            <article class="goal-item">
+              <div>
+                <h4>100 books this year</h4>
+                <p>47 finished so far.</p>
+              </div>
+              <progress value="47" max="100">47 of 100 books</progress>
+            </article>
+            <article class="goal-item is-complete"><button class="goal-delete" type="button" aria-label="completed goal" title="completed goal"><i class="fa-solid fa-check" aria-hidden="true"></i></button><div><h4>5 shared books</h4><p>completed! good job, star reader.</p></div><progress value="5" max="5">5 of 5 shared books</progress></article>
+            <article class="goal-item">
+              <div>
+                <h4>5 new genres</h4>
+                <p>2 of 5 explored so far.</p>
+              </div>
+              <progress value="2" max="5">2 of 5 new genres</progress>
+            </article>
+          </div>
+        </section>
         <button class="sidebar-toggle sidebar-toggle-inline" type="button" aria-label="hide sidebar" title="hide sidebar" aria-pressed="false"><i class="fa-solid fa-angles-left" aria-hidden="true"></i></button>
       </aside>
       <div class="page-main">
@@ -165,9 +224,16 @@
     <p>created for someone I love to the moon and back.</p>
   </footer>
   </div>
-  <script src="script.js"></script>
+  <script src="script.js?v=1"></script>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 

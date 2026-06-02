@@ -57,3 +57,30 @@ if (sidebarToggle) {
     setSidebarState(isHidden);
   });
 }
+
+const sharedFriendFilter = document.querySelector("#shared-friend-filter");
+
+if (sharedFriendFilter) {
+  const sharedShelf = sharedFriendFilter.closest(".shared-shelf");
+  const sharedBookItems = sharedShelf ? [...sharedShelf.querySelectorAll("[data-shared-friends]")] : [];
+  const emptyFilterMessage = sharedShelf ? sharedShelf.querySelector(".empty-filter-message") : null;
+
+  sharedFriendFilter.addEventListener("input", () => {
+    const query = sharedFriendFilter.value.trim().toLowerCase();
+    let visibleCount = 0;
+
+    sharedBookItems.forEach((item) => {
+      const friendNames = item.dataset.sharedFriends.toLowerCase();
+      const isVisible = !query || friendNames.includes(query);
+      item.hidden = !isVisible;
+
+      if (isVisible) {
+        visibleCount += 1;
+      }
+    });
+
+    if (emptyFilterMessage) {
+      emptyFilterMessage.hidden = visibleCount > 0;
+    }
+  });
+}
