@@ -6,12 +6,12 @@
   <title>moon-lit | my library</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=164">
+  <link rel="stylesheet" href="style.css?v=172">
 </head>
 <body>
   <div class="site-shell">
   <header>
-    <h1>moon-lit</h1>
+    <h1><a href="index.html" aria-label="moon-lit home">moon-lit</a></h1>
     <button class="notifications-button mobile-notifications-button" type="button" popovertarget="notifications-popover" aria-label="open notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i><span class="notification-dot" aria-hidden="true"></span></button>
     <button class="nav-toggle" type="button" popovertarget="mobile-nav" aria-label="open navigation"><span aria-hidden="true"></span></button>
     <nav class="desktop-nav" aria-label="Main navigation">
@@ -41,7 +41,7 @@
       <ul>
         <li class="notification-item request-book has-actions">
           <span class="notification-icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span>
-          <p><a href="friend.html">peach</a> wants to share <a href="book.html">lightbringer</a> with you.</p>
+          <p><a href="friend.html">peach</a> wants to share <a href="book.html?from=library">lightbringer</a> with you.</p>
           <small>today</small>
           <div class="notification-actions" aria-label="shared book request actions">
             <button type="button">approve</button>
@@ -59,12 +59,11 @@
         </li>
         <li class="notification-item stopped-sharing">
           <span class="notification-icon"><i class="fa-solid fa-link-slash" aria-hidden="true"></i></span>
-          <p><a href="friend.html">kaitie</a> stopped sharing <a href="book.html">twilight</a> with you.</p>
+          <p><a href="friend.html">kaitie</a> stopped sharing <a href="book.html?from=library">twilight</a> with you.</p>
           <small>may 29</small>
         </li>
       </ul>
-    </section>
-  </header>
+    </section></header>
 
   <main class="page-shell">
       <aside class="home-sidebar" aria-label="Account and reading stats">
@@ -77,14 +76,11 @@
             </div>
           </div>
           <div class="account-actions">
-            <a href="account.html">log in</a>
-            <a href="account.html">sign up</a>
             <a href="account.html">view profile</a>
             <a href="account.html">edit account</a>
+            <a href="account.html">sign out</a>
           </div>
-        </section>
-
-        <section class="home-stats" aria-labelledby="stats-heading">
+        </section><section class="home-stats" aria-labelledby="stats-heading">
           <h3 id="stats-heading" data-stats-heading>monthly stats</h3>
           <div class="stats-carousel">
             <div class="stats-panel is-active" data-stats-panel="monthly">
@@ -153,8 +149,7 @@
             <button type="button" data-stats-target="yearly" aria-label="show yearly stats" aria-pressed="false"></button>
             <button type="button" data-stats-target="all-time" aria-label="show all-time stats" aria-pressed="false"></button>
           </div>
-        </section>
-        <section class="goals-panel" aria-labelledby="goals-heading">
+        </section><section class="goals-panel" aria-labelledby="goals-heading">
           <div class="goals-heading-row"><h3 id="goals-heading">goals</h3><a class="goals-add" href="account.html#add-goal-heading" aria-label="add a goal" title="add a goal"><i class="fa-solid fa-plus" aria-hidden="true"></i></a></div>
           <div class="goal-list">
             <article class="goal-item">
@@ -180,8 +175,7 @@
               <progress value="2" max="5">2 of 5 new genres</progress>
             </article>
           </div>
-        </section>
-        <button class="sidebar-toggle sidebar-toggle-inline" type="button" aria-label="hide sidebar" title="hide sidebar" aria-pressed="false"><i class="fa-solid fa-angles-left" aria-hidden="true"></i></button>
+        </section><button class="sidebar-toggle sidebar-toggle-inline" type="button" aria-label="hide sidebar" title="hide sidebar" aria-pressed="false"><i class="fa-solid fa-angles-left" aria-hidden="true"></i></button>
       </aside>
       <div class="page-main">
 <section class="page-title has-page-actions" aria-labelledby="page-title-heading">
@@ -250,9 +244,7 @@
 
         <button type="submit">add book</button>
       </form>
-    </section>
-
-    <section id="add-quote-popover" class="compact-form modal-panel" popover aria-labelledby="add-quote-heading">
+    </section><section id="add-quote-popover" class="compact-form modal-panel" popover aria-labelledby="add-quote-heading">
       <h2 id="add-quote-heading">add quote</h2>
       <button class="modal-close" type="button" popovertarget="add-quote-popover" popovertargetaction="hide">close</button>
       <form>
@@ -280,15 +272,13 @@
 
         <button type="submit">save quote</button>
       </form>
-    </section>
-
-    <section class="book-shelf featured-shelf" aria-labelledby="bookmarked-heading">
+    </section><section class="book-shelf featured-shelf" aria-labelledby="bookmarked-heading">
       <h2 id="bookmarked-heading">bookmarked</h2>
       <p>currently reading.</p>
       <ul>
         <li>
           <article class="book-tile">
-            <h3><a href="book.html">dungeon crawler carl</a></h3>
+            <h3><a href="book.html?from=library">dungeon crawler carl</a></h3>
             <p class="book-meta"><span>matt dinniman</span></p>
             <p>184 / 420 pages</p>
             <progress value="184" max="420">184 of 420 pages</progress>
@@ -297,7 +287,7 @@
         </li>
         <li>
           <article class="book-tile">
-            <h3><a href="book.html">twilight</a></h3>
+            <h3><a href="book.html?from=library">twilight</a></h3>
             <p class="book-meta"><span>stephenie meyer</span></p>
             <p>62 / 280 pages</p>
             <progress value="62" max="280">62 of 280 pages</progress>
@@ -306,7 +296,7 @@
         </li>
         <li>
           <article class="book-tile">
-            <h3><a href="book.html">fourth wing</a></h3>
+            <h3><a href="book.html?from=library">fourth wing</a></h3>
             <p class="book-meta"><span>rebecca yarros</span></p>
             <p>211 / 390 pages</p>
             <progress value="211" max="390">211 of 390 pages</progress>
@@ -315,74 +305,69 @@
         </li>
       </ul>
       <p class="panel-link"><a href="bookmarked.html">view more</a></p>
-    </section>
-
-    <div class="shelf-pair">
+    </section><div class="shelf-pair">
     <section class="book-shelf" aria-labelledby="bookshelf-heading">
       <h2 id="bookshelf-heading">bookshelf</h2>
       <p>to be read.</p>
       <ul>
         <li>
           <article class="book-tile">
-            <h3><a href="book.html">a court of thorns and roses</a></h3>
+            <h3><a href="book.html?from=library">a court of thorns and roses</a></h3>
             <p>horror, long</p>
           </article>
         </li>
         <li>
           <article class="book-tile">
-            <h3><a href="book.html">lightbringer</a></h3>
+            <h3><a href="book.html?from=library">lightbringer</a></h3>
             <p>romance, cozy</p>
           </article>
         </li>
         <li>
           <article class="book-tile">
-            <h3><a href="book.html">assassin's blade</a></h3>
+            <h3><a href="book.html?from=library">assassin's blade</a></h3>
             <p>mystery, dark</p>
           </article>
         </li>
         <li>
           <article class="book-tile">
-            <h3><a href="book.html">the guy she was interested in wasn't a guy at all</a></h3>
+            <h3><a href="book.html?from=library">the guy she was interested in wasn't a guy at all</a></h3>
             <p>poetry, short</p>
           </article>
         </li>
       </ul>
       <p class="panel-link"><a href="bookshelf.html">view more</a></p>
-    </section>
-
-    <section class="book-shelf" aria-labelledby="finished-heading">
+    </section><section class="book-shelf" aria-labelledby="finished-heading">
       <h2 id="finished-heading">finished books</h2>
       <p>completed.</p>
       <ul>
         <li>
           <article class="book-tile">
-            <h3><a href="book.html">game of thrones</a></h3>
+            <h3><a href="book.html?from=library">game of thrones</a></h3>
             <p class="star-rating" aria-label="5 out of 5 stars">★★★★★</p>
           </article>
         </li>
         <li>
           <article class="book-tile">
-            <h3><a href="book.html">twilight</a></h3>
+            <h3><a href="book.html?from=library">twilight</a></h3>
             <p class="star-rating" aria-label="4 out of 5 stars">★★★★☆</p>
           </article>
         </li>
         <li>
           <article class="book-tile">
-            <h3><a href="book.html">lightbringer</a></h3>
+            <h3><a href="book.html?from=library">lightbringer</a></h3>
             <p class="star-rating" aria-label="5 out of 5 stars">★★★★★</p>
           </article>
         </li>
       </ul>
       <p class="panel-link"><a href="finished.html">view more</a></p>
-    </section>
-    </div>
+    </section></div>
       </div>
   </main>
   <footer>
     <p>created for someone I love to the moon and back.</p>
   </footer>
   </div>
-  <script src="script.js?v=1"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
 

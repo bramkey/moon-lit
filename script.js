@@ -84,3 +84,20 @@ if (sharedFriendFilter) {
     }
   });
 }
+
+const bookBreadcrumb = document.querySelector(".breadcrumb-trail");
+
+if (bookBreadcrumb && window.location.pathname.endsWith("book.html")) {
+  const source = new URLSearchParams(window.location.search).get("from");
+  const sourceLink = bookBreadcrumb.querySelector("a");
+
+  if (sourceLink && source === "library") {
+    sourceLink.href = "library.html";
+    sourceLink.textContent = "my library";
+  }
+
+  if (sourceLink && source === "shared") {
+    sourceLink.href = "shared.html";
+    sourceLink.textContent = "shared library";
+  }
+}

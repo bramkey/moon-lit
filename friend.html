@@ -6,12 +6,12 @@
   <title>moon-lit | friend profile</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=164">
+  <link rel="stylesheet" href="style.css?v=172">
 </head>
 <body>
   <div class="site-shell">
   <header>
-    <h1>moon-lit</h1>
+    <h1><a href="index.html" aria-label="moon-lit home">moon-lit</a></h1>
     <button class="notifications-button mobile-notifications-button" type="button" popovertarget="notifications-popover" aria-label="open notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i><span class="notification-dot" aria-hidden="true"></span></button>
     <button class="nav-toggle" type="button" popovertarget="mobile-nav" aria-label="open navigation"><span aria-hidden="true"></span></button>
     <nav class="desktop-nav" aria-label="Main navigation">
@@ -41,7 +41,7 @@
       <ul>
         <li class="notification-item request-book has-actions">
           <span class="notification-icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span>
-          <p><a href="friend.html">peach</a> wants to share <a href="book.html">lightbringer</a> with you.</p>
+          <p><a href="friend.html">peach</a> wants to share <a href="book.html?from=shared">lightbringer</a> with you.</p>
           <small>today</small>
           <div class="notification-actions" aria-label="shared book request actions">
             <button type="button">approve</button>
@@ -59,12 +59,11 @@
         </li>
         <li class="notification-item stopped-sharing">
           <span class="notification-icon"><i class="fa-solid fa-link-slash" aria-hidden="true"></i></span>
-          <p><a href="friend.html">kaitie</a> stopped sharing <a href="book.html">twilight</a> with you.</p>
+          <p><a href="friend.html">kaitie</a> stopped sharing <a href="book.html?from=shared">twilight</a> with you.</p>
           <small>may 29</small>
         </li>
       </ul>
-    </section>
-  </header>
+    </section></header>
 
   <main class="page-shell">
       <aside class="home-sidebar" aria-label="Account and reading stats">
@@ -77,14 +76,11 @@
             </div>
           </div>
           <div class="account-actions">
-            <a href="account.html">log in</a>
-            <a href="account.html">sign up</a>
             <a href="account.html">view profile</a>
             <a href="account.html">edit account</a>
+            <a href="account.html">sign out</a>
           </div>
-        </section>
-
-        <section class="home-stats" aria-labelledby="stats-heading">
+        </section><section class="home-stats" aria-labelledby="stats-heading">
           <h3 id="stats-heading" data-stats-heading>monthly stats</h3>
           <div class="stats-carousel">
             <div class="stats-panel is-active" data-stats-panel="monthly">
@@ -153,8 +149,7 @@
             <button type="button" data-stats-target="yearly" aria-label="show yearly stats" aria-pressed="false"></button>
             <button type="button" data-stats-target="all-time" aria-label="show all-time stats" aria-pressed="false"></button>
           </div>
-        </section>
-        <section class="goals-panel" aria-labelledby="goals-heading">
+        </section><section class="goals-panel" aria-labelledby="goals-heading">
           <div class="goals-heading-row"><h3 id="goals-heading">goals</h3><a class="goals-add" href="account.html#add-goal-heading" aria-label="add a goal" title="add a goal"><i class="fa-solid fa-plus" aria-hidden="true"></i></a></div>
           <div class="goal-list">
             <article class="goal-item">
@@ -180,13 +175,13 @@
               <progress value="2" max="5">2 of 5 new genres</progress>
             </article>
           </div>
-        </section>
-        <button class="sidebar-toggle sidebar-toggle-inline" type="button" aria-label="hide sidebar" title="hide sidebar" aria-pressed="false"><i class="fa-solid fa-angles-left" aria-hidden="true"></i></button>
+        </section><button class="sidebar-toggle sidebar-toggle-inline" type="button" aria-label="hide sidebar" title="hide sidebar" aria-pressed="false"><i class="fa-solid fa-angles-left" aria-hidden="true"></i></button>
       </aside>
       <div class="page-main">
 <section class="page-title" aria-labelledby="page-title-heading">
       <h2 id="page-title-heading">friend profile</h2>
     </section>
+    <nav class="breadcrumb-trail" aria-label="breadcrumb"><a href="friends.html">friends</a><span>friend profile</span></nav>
 
     <section aria-labelledby="friend-profile-heading">
       <h2 id="friend-profile-heading">kaitie</h2>
@@ -208,23 +203,20 @@
           <dd>5 visible</dd>
         </div>
       </dl>
-    </section>
-
-    <section aria-labelledby="friend-reading-heading">
+    </section><section aria-labelledby="friend-reading-heading">
       <h2 id="friend-reading-heading">currently reading</h2>
       <article>
-        <h3><a href="book.html">twilight</a></h3>
+        <h3><a href="book.html?from=shared">twilight</a></h3>
         <p>page 126.</p>
       </article>
-    </section>
-      </div>
+    </section></div>
   </main>
 
   <footer>
     <p>created for someone I love to the moon and back.</p>
   </footer>
   </div>
-  <script src="script.js?v=1"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
 

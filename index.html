@@ -6,12 +6,12 @@
   <title>moon-lit | home</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=164">
+  <link rel="stylesheet" href="style.css?v=172">
 </head>
 <body>
   <div class="site-shell">
   <header>
-    <h1>moon-lit</h1>
+    <h1><a href="index.html" aria-label="moon-lit home">moon-lit</a></h1>
     <button class="notifications-button mobile-notifications-button" type="button" popovertarget="notifications-popover" aria-label="open notifications"><i class="fa-regular fa-bell" aria-hidden="true"></i><span class="notification-dot" aria-hidden="true"></span></button>
     <button class="nav-toggle" type="button" popovertarget="mobile-nav" aria-label="open navigation"><span aria-hidden="true"></span></button>
     <nav class="desktop-nav" aria-label="Main navigation">
@@ -77,10 +77,9 @@
             </div>
           </div>
           <div class="account-actions">
-            <a href="account.html">log in</a>
-            <a href="account.html">sign up</a>
             <a href="account.html">view profile</a>
             <a href="account.html">edit account</a>
+            <a href="account.html">sign out</a>
           </div>
         </section>
 
@@ -195,7 +194,7 @@
       <section class="home-current" aria-labelledby="currently-reading-heading">
         <h3 id="currently-reading-heading">currently reading</h3>
         <article>
-          <h4><a href="book.html">dungeon crawler carl</a></h4>
+          <h4><a href="book.html?from=library">dungeon crawler carl</a></h4>
           <p class="home-book-author">matt dinniman</p>
           <dl class="detail-grid compact-mobile">
             <div>
@@ -220,7 +219,7 @@
           </div>
         </div>
         <article>
-          <h4><a href="book.html">twilight</a></h4>
+          <h4><a href="book.html?from=shared">twilight</a></h4>
           <p class="home-book-author">stephenie meyer</p>
           <dl class="detail-grid compact-mobile shared-summary">
             <div>
@@ -288,7 +287,7 @@
     <p>created for someone I love to the moon and back.</p>
   </footer>
   </div>
-  <script src="script.js?v=1"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
 
