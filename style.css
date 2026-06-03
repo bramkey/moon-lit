@@ -3089,8 +3089,24 @@ th {
   }
 
   .notifications-popover:popover-open {
-    inset: 74px 12px auto auto;
+    inset: 74px auto auto 50%;
     width: min(340px, calc(100vw - 24px));
+    transform: translateX(-50%);
+  }
+
+  #add-shared-book-popover {
+    width: min(330px, calc(100vw - 48px));
+  }
+
+  .notifications-popover::backdrop,
+  .modal-panel::backdrop {
+    background: rgba(4, 6, 12, 0.34);
+    backdrop-filter: blur(1px);
+  }
+
+  .mobile-nav-popover::backdrop {
+    background: transparent;
+    backdrop-filter: none;
   }
 
   .mobile-nav-popover ul {
@@ -3190,6 +3206,35 @@ th {
     min-width: 0;
     min-height: 42px;
     padding: 6px 8px;
+  }
+
+  .shared-friends ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: stretch;
+    gap: 7px;
+  }
+
+  .shared-friends a {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    min-height: 82px;
+    padding: 9px 6px;
+    text-align: center;
+  }
+
+  .shared-friends strong {
+    font-size: 0.78rem;
+  }
+
+  .shared-friends small {
+    font-size: 0.58rem;
+    line-height: 1.15;
+  }
+
+  .friend-initial {
+    width: 30px;
+    height: 30px;
   }
 
   .detail-grid.compact-mobile dt {
