@@ -6,7 +6,7 @@
   <title>moon-lit | my library</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=172">
+  <link rel="stylesheet" href="style.css?v=185">
 </head>
 <body>
   <div class="site-shell">
@@ -191,10 +191,10 @@
       <button class="modal-close" type="button" popovertarget="add-book-popover" popovertargetaction="hide">close</button>
       <form>
         <div class="form-fields">
-          <p>
+          <div class="form-field book-title-field">
             <label for="book-title">title</label>
-            <input id="book-title" name="title" type="text">
-          </p>
+            <input id="book-title" name="title" type="text" autocomplete="off" aria-describedby="open-library-status">
+          </div>
 
           <p>
             <label for="book-author">author</label>
@@ -219,28 +219,55 @@
               <option value="finished">finished</option>
             </select>
           </p>
+
         </div>
 
-        <fieldset>
-          <legend>tags</legend>
-          <label><input type="checkbox" name="tags" value="horror"> horror</label>
-          <label><input type="checkbox" name="tags" value="fantasy"> fantasy</label>
-          <label><input type="checkbox" name="tags" value="sci-fi"> sci-fi</label>
-          <label><input type="checkbox" name="tags" value="romance"> romance</label>
-          <label><input type="checkbox" name="tags" value="mystery"> mystery</label>
-          <label><input type="checkbox" name="tags" value="thriller"> thriller</label>
-          <label><input type="checkbox" name="tags" value="literary"> literary</label>
-          <label><input type="checkbox" name="tags" value="nonfiction"> nonfiction</label>
-          <label><input type="checkbox" name="tags" value="memoir"> memoir</label>
-          <label><input type="checkbox" name="tags" value="poetry"> poetry</label>
-          <label><input type="checkbox" name="tags" value="graphic-novel"> graphic novel</label>
-          <label><input type="checkbox" name="tags" value="classic"> classic</label>
-          <label><input type="checkbox" name="tags" value="cozy"> cozy</label>
-          <label><input type="checkbox" name="tags" value="dark"> dark</label>
-          <label><input type="checkbox" name="tags" value="nsfw"> nsfw</label>
-          <label><input type="checkbox" name="tags" value="long"> long</label>
-          <label><input type="checkbox" name="tags" value="short"> short</label>
-        </fieldset>
+        <input id="book-cover-url" name="cover-url" type="hidden">
+        <input id="book-open-library-key" name="open-library-key" type="hidden">
+
+        <div class="tags-and-matches">
+          <fieldset>
+            <legend>tags</legend>
+            <label><input type="checkbox" name="tags" value="horror"> horror</label>
+            <label><input type="checkbox" name="tags" value="fantasy"> fantasy</label>
+            <label><input type="checkbox" name="tags" value="sci-fi"> sci-fi</label>
+            <label><input type="checkbox" name="tags" value="romance"> romance</label>
+            <label><input type="checkbox" name="tags" value="mystery"> mystery</label>
+            <label><input type="checkbox" name="tags" value="thriller"> thriller</label>
+            <label><input type="checkbox" name="tags" value="young-adult"> young adult</label>
+            <label><input type="checkbox" name="tags" value="paranormal"> paranormal</label>
+            <label><input type="checkbox" name="tags" value="adventure"> adventure</label>
+            <label><input type="checkbox" name="tags" value="historical"> historical</label>
+            <label><input type="checkbox" name="tags" value="dystopian"> dystopian</label>
+            <label><input type="checkbox" name="tags" value="contemporary"> contemporary</label>
+            <label><input type="checkbox" name="tags" value="literary"> literary</label>
+            <label><input type="checkbox" name="tags" value="nonfiction"> nonfiction</label>
+            <label><input type="checkbox" name="tags" value="memoir"> memoir</label>
+            <label><input type="checkbox" name="tags" value="poetry"> poetry</label>
+            <label><input type="checkbox" name="tags" value="graphic-novel"> graphic novel</label>
+            <label><input type="checkbox" name="tags" value="manga"> manga</label>
+            <label><input type="checkbox" name="tags" value="classic"> classic</label>
+            <label><input type="checkbox" name="tags" value="cozy"> cozy</label>
+            <label><input type="checkbox" name="tags" value="dark"> dark</label>
+            <label><input type="checkbox" name="tags" value="nsfw"> nsfw</label>
+            <label><input type="checkbox" name="tags" value="long"> long</label>
+            <label><input type="checkbox" name="tags" value="short"> short</label>
+          </fieldset>
+
+          <aside class="book-lookup-panel" aria-labelledby="book-lookup-heading">
+            <h3 id="book-lookup-heading">book matches</h3>
+            <span id="open-library-status" class="open-library-status" role="status" aria-live="polite">type a title to search.</span>
+            <p id="manual-book-note" class="manual-book-note" hidden>manual entry of book details required.</p>
+            <ul id="open-library-results" class="open-library-results" hidden></ul>
+            <div id="open-library-preview" class="open-library-preview" hidden aria-live="polite">
+              <img id="book-cover-preview" src="" alt="">
+              <div>
+                <strong id="open-library-preview-title">selected book</strong>
+                <span id="open-library-preview-meta">cover and details found</span>
+              </div>
+            </div>
+          </aside>
+        </div>
 
         <button type="submit">add book</button>
       </form>
@@ -367,7 +394,7 @@
     <p>created for someone I love to the moon and back.</p>
   </footer>
   </div>
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=12"></script>
 </body>
 </html>
 
